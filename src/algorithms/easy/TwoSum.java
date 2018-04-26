@@ -25,6 +25,13 @@ import java.util.Map;
  */
 public class TwoSum {
 
+    /**
+     * 算法思想：
+     * 1. 建立一个映射表resultMap用于保存遍历过的元素，key为元素值，value为元素对应的数组下标
+     * 2. 对目标数组进行遍历，对于每个数组元素，用目标值减去该元素的值得到一个差值，看resultMap里面是否已包含这个差值
+     * 3. 若resultMap已包含这个差值，则将该差值对应的数组下标和正被遍历的元素下标返回，同时跳出循环
+     * 4. 若不包含这个差值，则继续遍历，直到遍历完为止
+     */
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> resultMap = new HashMap<>();
         int[] index = new int[2];
